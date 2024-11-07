@@ -1,0 +1,15 @@
+<p class="menu-title">Магазин</p>
+<ul class="nav">
+<li>
+<%= link_to('Товары', products_path) %>
+</li>
+<li>
+<%= link_to('Пользователи', users_path) %>
+</li>
+<li>
+<%= link_to('Диалог', {controller: :dialogs, action: :welcome}) %>
+</li>
+<li>
+<%= link_to('Избранные', {controller: :wishlist, action: :show}) %>
+</li>
+</ul>

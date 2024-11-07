@@ -1,0 +1,29 @@
+<p style="color: green"><%= notice %></p>
+
+<h1 class="main-header">Продукты</h1>
+
+<div id="products">
+  <div class="products-table">
+    <div class="p-thead">
+      <div class="p-thead-tr">
+        <p>Name</p>
+        <p>Full name</p>
+        <p>Price</p>
+        <p>Description</p>
+        <p>Production date</p>
+        <p>Guarantee</p>
+        <p>Producer</p>
+        <p>Action</p>
+        <p>Link</p>
+      </div>
+    </div>
+    <div class="p-tbody">
+      <% @products.each do |product| %>
+        <%= render product %>
+      <% end %>
+    </div>
+  </div>
+
+</div>
+
+<%= link_to "New product", new_product_path, class:'new-product' %>

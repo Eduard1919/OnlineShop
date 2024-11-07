@@ -1,0 +1,7 @@
+<h1>Укажите Ваш возраст:</h1>
+<%= turbo_frame_tag :age_frame do %>
+    <%= form_tag({controller: :dialogs, action: :after_ask_about_age}, {method: :get}) do %>
+    <%= number_field_tag(:age, '', placeholder: 'Возраст') %>
+    <%= submit_tag('Отправить') %>
+    <% end %>
+<% end %>

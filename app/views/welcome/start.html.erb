@@ -1,0 +1,12 @@
+<% if session['user'].blank? %>
+<h1>
+Пожалуйста авторизуйтесь!
+</h1>
+<%= form_tag({controller: :welcome, action: :start}, method: :get) do %>
+<%= text_field_tag(:login, '', placeholder: 'Логин') %>
+<%= password_field_tag(:plain_password, '', placeholder: 'Пароль') %>
+<%= submit_tag('Войти') %>
+<% end %>
+<% else %>
+<h1>Добро пожаловать, <%= session['user'] %>!</h1>
+<% end %> 

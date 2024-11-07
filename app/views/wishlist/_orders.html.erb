@@ -1,0 +1,39 @@
+<% @wishlist.orders.each do |order| %>
+    <% product = order.product %>
+      <div id="<%= 'wishlist-#{product.id}'%>" class="p-tbody-tr">
+        <p>
+          <%= product.name %>
+        </p>
+
+        <p>
+          <%= product.full_name %>
+        </p>
+
+        <p>
+          <%= product.price %>
+        </p>
+
+        <p>
+          <%= product.description %>
+        </p>
+
+        <p>
+          <%= product.production_date %>
+        </p>
+
+        <p>
+          <%= product.guarantee %>
+        </p>
+
+        <p>
+          <%= product.producer_id %>
+        </p>
+          <%= form_with(url: wishlist_remove_path) do |f| %>
+            <%= f.hidden_field :id, value: order.id %>
+            <%= f.submit 'Удалить избранных', class:'products-btn'%>
+          <% end %>
+        <p class="products-link">
+          <%= link_to "Ссылка на продукт", product %>
+        </p>
+      </div>
+<% end %>

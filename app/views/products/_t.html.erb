@@ -1,0 +1,18 @@
+<% w = @wishlist.orders.take @wishlist.orders.length%>
+<% c = false %>
+<% w.each do |x| %>
+  <% if x[:product_id] == product.id %>
+    <%c = true %>
+  <% end %>
+<% end %>
+<% if c %>
+  <%= form_with(url: wishlist_remove_path) do |f| %>
+    <%= f.hidden_field :id, value: Order.where(wishlist_id: @wishlist.id, product_id: product.id).first[:id] %>
+    <%= f.submit 'Удалить из избранных', class: 'products-btn' %>
+  <% end %>
+<% else %>
+  <%= form_with(url: wishlist_add_path) do |f| %>
+    <%= f.hidden_field :id, value: product.id %>
+    <%= f.submit 'Добавить в избранные', class: 'products-btn'%>
+  <% end %>
+<% end %>

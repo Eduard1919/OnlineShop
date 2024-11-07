@@ -1,0 +1,33 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="products-table">
+  <div class="p-thead">
+    <div class="p-thead-tr">
+      <p>Name</p>
+      <p>Full name</p>
+      <p>Price</p>
+      <p>Description</p>
+      <p>Production date</p>
+      <p>Guarantee</p>
+      <p>Producer</p>
+      <p>Action</p>
+      <p>Link</p>
+    </div>
+  </div>
+  <div class="p-tbody">
+    <%= render @product %>
+  </div>
+</div>
+
+
+<div class="product-btn-block ">
+  <div>
+    <%= link_to "Edit this product", edit_product_path(@product), class:'new-product product-edit' %>
+  </div>
+  <div>
+    <%= link_to "Back to products", products_path, class:'new-product product-return' %>
+  </div>
+  <div class='product-delete'>
+    <%= button_to "Destroy this product", @product, method: :delete, class:'destroy new-product' %>
+  </div>
+</div>

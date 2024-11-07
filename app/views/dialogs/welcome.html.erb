@@ -1,0 +1,11 @@
+<% if @name.present? %>
+<h1>Добро пожаловать, <%= @name %>!</h1>
+<% else %>
+<h1>Добро пожаловать!</h1>
+<h3>Укажите своё имя: <%= link_to('форма', {controller: :dialogs, action: :first_meet}) %></h3>
+<% end %>
+<% if @age.present? %>
+<h3>Ваш возраст: <%= @age %>!</h1>
+<% else %>
+<h3>Укажите Ваш возраст: <%= link_to('форма', {controller: :dialogs, action: :ask_about_age}) %></h3>
+<% end %>

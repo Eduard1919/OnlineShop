@@ -1,0 +1,13 @@
+<div id="<%= dom_id user %>">
+  <p>
+    <strong>Login:</strong>
+    <%= user.login %>
+  </p>
+
+  <p>
+    <strong>Permissions:</strong>
+    <%= User::ROLES[user.permissions] %>
+  </p>
+
+
+</div>

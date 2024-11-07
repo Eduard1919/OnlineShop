@@ -1,0 +1,25 @@
+<%= turbo_frame_tag 'wishlist' do %>
+    <h1 class="main-header">Страница избранных</h1>
+    <% if @wishlist.orders.count > 0 %>
+        <div class="products-table">
+            <div class="p-thead">
+            <div class="p-thead-tr">
+                <p>Name</p>
+                <p>Full name</p>
+                <p>Price</p>
+                <p>Description</p>
+                <p>Production date</p>
+                <p>Guarantee</p>
+                <p>Producer</p>
+                <p>Action</p>
+                <p>Link</p>
+            </div>
+            </div>
+            <div class="p-tbody">
+                <%= render 'wishlist/orders' %>
+            </div>
+        </div>
+    <% else %>
+        <p>Список пуст</p>
+    <% end %>
+<% end %>

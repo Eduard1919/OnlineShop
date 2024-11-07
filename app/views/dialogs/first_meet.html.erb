@@ -1,0 +1,5 @@
+<h1>Укажите Ваше имя:</h1>
+<%= form_tag({controller: :dialogs, action: :after_first_meet}, {method: :get}) do %>
+  <%= text_field_tag(:name, '', placeholder: 'Имя') %>
+  <%= submit_tag('Отправить') %>
+<% end %>     

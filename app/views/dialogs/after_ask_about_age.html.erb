@@ -1,0 +1,12 @@
+<%= turbo_frame_tag :age_frame do %>
+    <% if @age.to_i > 0 %>
+        <h2>Возраст успешно сохранён!</h2>
+        <h3>Для возврата используйте <%= link_to('ссылку', {controller: :dialogs, action: :welcome}, data: {turbo_frame: '_top'}) %></h3>
+    <% else %>
+        <h2>Возраст всё же надо ввести!</h2>
+        <%= form_tag({controller: :dialogs, action: :after_ask_about_age}, {method: :get}) do %>
+        <%= number_field_tag(:age, '', placeholder: 'Возраст') %>
+        <%= submit_tag('Отправить') %>
+        <% end %>
+    <% end %>    
+<% end %>
